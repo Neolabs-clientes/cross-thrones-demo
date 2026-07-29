@@ -111,8 +111,8 @@ section{position:relative;overflow:hidden}
 
 /* ── SCHEDULE ── */
 .schedule{background:var(--bg2)}
-.schedule-grid{display:grid;grid-template-columns:55px repeat(4,1fr);gap:3px;max-width:700px;margin:40px auto 0;background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:6px}
-.sc-header{font-family:var(--font-display);font-size:0.65rem;font-weight:600;color:rgba(255,255,255,0.5);text-align:center;padding:8px 2px;letter-spacing:1px;text-transform:uppercase}
+.schedule-grid{display:grid;grid-template-columns:50px repeat(6,1fr);gap:2px;max-width:100%;overflow-x:auto;background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:6px;margin:16px auto 0}
+.sc-header{font-family:var(--font-display);font-size:0.6rem;font-weight:600;color:rgba(255,255,255,0.5);text-align:center;padding:6px 2px;letter-spacing:0.5px;text-transform:uppercase}
 .sc-time{font-family:var(--font-display);font-size:0.6rem;font-weight:500;color:var(--gold);text-align:center;padding:4px 2px;display:flex;align-items:center;justify-content:center;flex-direction:column;line-height:1.1}
 .sc-time small{font-size:0.5rem;color:var(--text-dim)}
 .sc-cell{padding:4px 2px;text-align:center;border-radius:4px;font-family:var(--font-display);font-size:0.55rem;font-weight:600;background:rgba(212,168,67,0.04);border:1px solid rgba(212,168,67,0.1);display:flex;align-items:center;justify-content:center;transition:all 0.2s}
@@ -183,7 +183,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:40px 0}
   .about-image img{height:300px}
   .terms-grid,.pricing-grid{grid-template-columns:1fr}
   .bonos-grid{flex-direction:column;max-width:280px}
-  .schedule-grid{grid-template-columns:40px repeat(4,1fr);gap:2px;padding:4px}
+  .schedule-grid{grid-template-columns:40px repeat(6,1fr);gap:1px;padding:4px;font-size:0.5rem}
   .footer-grid{grid-template-columns:1fr;gap:32px}
   .footer-bottom{flex-direction:column;text-align:center}
   section{padding:60px 0}
@@ -344,44 +344,75 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:40px 0}
     <div class="reveal" style="text-align:center;">
       <div class="section-label">Horarios</div>
       <h2 class="section-title">WOD & <span class="gold">OPEN BOX</span></h2>
-      <p class="section-desc center">Clases dirigidas WOD y espacio OPEN BOX. Lunes a Viernes.</p>
+      <p class="section-desc center">Clases dirigidas WOD y espacio OPEN BOX.</p>
     </div>
+
+    <h3 class="sched-subtitle reveal" style="color:var(--gold);font-family:var(--font-display);font-size:1rem;letter-spacing:2px;text-transform:uppercase;text-align:center;margin-top:32px;margin-bottom:8px;">
+      Horario habitual
+    </h3>
     <div class="schedule-grid reveal">
       <div class="sc-time"></div>
-      <div class="sc-header">LUNES</div>
-      <div class="sc-header">MARTES</div>
-      <div class="sc-header">JUEVES</div>
-      <div class="sc-header">VIERNES</div>
+      <div class="sc-header">LUN</div>
+      <div class="sc-header">MAR</div>
+      <div class="sc-header">MIÉ</div>
+      <div class="sc-header">JUE</div>
+      <div class="sc-header">VIE</div>
+      <div class="sc-header">SÁB</div>
 
       <div class="sc-time">09:30</div>
-      <div class="sc-cell"><span class="label">WOD MAÑANAS</span><br><span style="color:var(--text-dim);font-size:0.5rem;">Open*</span></div><div class="sc-cell"><span class="label">WOD MAÑANAS</span><br><span style="color:var(--text-dim);font-size:0.5rem;">Open*</span></div><div class="sc-cell"><span class="label">WOD MAÑANAS</span><br><span style="color:var(--text-dim);font-size:0.5rem;">Open*</span></div><div class="sc-cell"><span class="label">WOD MAÑANAS</span><br><span style="color:var(--text-dim);font-size:0.5rem;">Open*</span></div>
+      <div class="sc-cell"><span class="label">WOD MAÑANAS</span><br><span style="color:var(--text-dim);font-size:0.45rem;">Open*</span></div><div class="sc-cell"><span class="label">WOD MAÑANAS</span><br><span style="color:var(--text-dim);font-size:0.45rem;">Open*</span></div><div class="sc-cell"><span class="label">WOD MAÑANAS</span><br><span style="color:var(--text-dim);font-size:0.45rem;">Open*</span></div><div class="sc-cell"><span class="label">WOD MAÑANAS</span><br><span style="color:var(--text-dim);font-size:0.45rem;">Open*</span></div><div class="sc-cell"><span class="label">WOD MAÑANAS</span><br><span style="color:var(--text-dim);font-size:0.45rem;">Open*</span></div><div class="sc-empty"></div>
 
       <div class="sc-time">10:30</div>
-      <div class="sc-cell"><span class="label">WOD MAÑANAS</span><br><span style="color:var(--text-dim);font-size:0.5rem;">Open*</span></div><div class="sc-cell"><span class="label">WOD MAÑANAS</span><br><span style="color:var(--text-dim);font-size:0.5rem;">Open*</span></div><div class="sc-cell"><span class="label">WOD MAÑANAS</span><br><span style="color:var(--text-dim);font-size:0.5rem;">Open*</span></div><div class="sc-cell"><span class="label">WOD MAÑANAS</span><br><span style="color:var(--text-dim);font-size:0.5rem;">Open*</span></div>
+      <div class="sc-cell"><span class="label">WOD MAÑANAS</span><br><span style="color:var(--text-dim);font-size:0.45rem;">Open*</span></div><div class="sc-cell"><span class="label">WOD MAÑANAS</span><br><span style="color:var(--text-dim);font-size:0.45rem;">Open*</span></div><div class="sc-cell"><span class="label">WOD MAÑANAS</span><br><span style="color:var(--text-dim);font-size:0.45rem;">Open*</span></div><div class="sc-cell"><span class="label">WOD MAÑANAS</span><br><span style="color:var(--text-dim);font-size:0.45rem;">Open*</span></div><div class="sc-cell"><span class="label">WOD MAÑANAS</span><br><span style="color:var(--text-dim);font-size:0.45rem;">Open*</span></div><div class="sc-cell"><span class="label">WOD MAÑANAS</span><br><span style="color:var(--text-dim);font-size:0.45rem;">Open*</span></div>
 
       <div class="sc-time">11:30</div>
-      <div class="sc-cell"><span class="label">WOD MAÑANAS</span><br><span style="color:var(--text-dim);font-size:0.5rem;">FUNCIONAL</span></div><div class="sc-cell"><span class="label">WOD MAÑANAS</span><br><span style="color:var(--text-dim);font-size:0.5rem;">FUNCIONAL</span></div><div class="sc-cell"><span class="label">WOD MAÑANAS</span><br><span style="color:var(--text-dim);font-size:0.5rem;">FUNCIONAL</span></div><div class="sc-cell"><span class="label">WOD MAÑANAS</span><br><span style="color:var(--text-dim);font-size:0.5rem;">FUNCIONAL</span></div>
+      <div class="sc-cell"><span class="label">WOD MAÑANAS</span><br><span style="color:var(--text-dim);font-size:0.45rem;">FUNCIONAL</span></div><div class="sc-cell"><span class="label">WOD MAÑANAS</span><br><span style="color:var(--text-dim);font-size:0.45rem;">FUNCIONAL</span></div><div class="sc-cell"><span class="label">WOD MAÑANAS</span><br><span style="color:var(--text-dim);font-size:0.45rem;">FUNCIONAL</span></div><div class="sc-cell"><span class="label">WOD MAÑANAS</span><br><span style="color:var(--text-dim);font-size:0.45rem;">FUNCIONAL</span></div><div class="sc-cell"><span class="label">WOD MAÑANAS</span><br><span style="color:var(--text-dim);font-size:0.45rem;">FUNCIONAL</span></div><div class="sc-empty"></div>
 
       <div class="sc-time">16:15</div>
-      <div class="sc-cell"><span class="label">WOD</span><br><span style="color:var(--text-dim);font-size:0.5rem;">Open</span></div><div class="sc-empty"></div><div class="sc-cell"><span class="label">WOD</span><br><span style="color:var(--text-dim);font-size:0.5rem;">Open</span></div><div class="sc-empty"></div>
+      <div class="sc-cell"><span class="label">WOD</span><br><span style="color:var(--text-dim);font-size:0.45rem;">Open</span></div><div class="sc-empty"></div><div class="sc-cell"><span class="label">WOD</span><br><span style="color:var(--text-dim);font-size:0.45rem;">Open</span></div><div class="sc-empty"></div><div class="sc-cell"><span class="label">WOD</span><br><span style="color:var(--text-dim);font-size:0.45rem;">Open</span></div><div class="sc-empty"></div>
 
       <div class="sc-time">17:15</div>
-      <div class="sc-cell"><span class="label">WOD</span><br><span style="color:var(--text-dim);font-size:0.5rem;">Open</span></div><div class="sc-cell"><span class="label">WOD</span><br><span style="color:var(--text-dim);font-size:0.5rem;">Open</span></div><div class="sc-cell"><span class="label">WOD</span><br><span style="color:var(--text-dim);font-size:0.5rem;">Open</span></div><div class="sc-cell"><span class="label">WOD</span><br><span style="color:var(--text-dim);font-size:0.5rem;">Open</span></div>
+      <div class="sc-cell"><span class="label">WOD</span><br><span style="color:var(--text-dim);font-size:0.45rem;">Open</span></div><div class="sc-cell"><span class="label">WOD</span><br><span style="color:var(--text-dim);font-size:0.45rem;">Open</span></div><div class="sc-cell"><span class="label">WOD</span><br><span style="color:var(--text-dim);font-size:0.45rem;">Open</span></div><div class="sc-cell"><span class="label">WOD</span><br><span style="color:var(--text-dim);font-size:0.45rem;">Open</span></div><div class="sc-cell"><span class="label">WOD</span><br><span style="color:var(--text-dim);font-size:0.45rem;">Open</span></div><div class="sc-empty"></div>
 
       <div class="sc-time">18:15</div>
-      <div class="sc-cell"><span class="label">WOD</span><br><span style="color:var(--text-dim);font-size:0.5rem;">Open</span></div><div class="sc-cell"><span class="label">WOD</span><br><span style="color:var(--text-dim);font-size:0.5rem;">Open</span></div><div class="sc-cell"><span class="label">WOD</span><br><span style="color:var(--text-dim);font-size:0.5rem;">Open</span></div><div class="sc-cell"><span class="label">WOD</span><br><span style="color:var(--text-dim);font-size:0.5rem;">Open</span></div>
+      <div class="sc-cell"><span class="label">WOD</span><br><span style="color:var(--text-dim);font-size:0.45rem;">Open</span></div><div class="sc-cell"><span class="label">WOD</span><br><span style="color:var(--text-dim);font-size:0.45rem;">Open</span></div><div class="sc-cell"><span class="label">WOD</span><br><span style="color:var(--text-dim);font-size:0.45rem;">Open</span></div><div class="sc-cell"><span class="label">WOD</span><br><span style="color:var(--text-dim);font-size:0.45rem;">Open</span></div><div class="sc-cell"><span class="label">WOD</span><br><span style="color:var(--text-dim);font-size:0.45rem;">Open</span></div><div class="sc-empty"></div>
 
       <div class="sc-time">19:15</div>
-      <div class="sc-cell"><span class="label">WOD</span><br><span style="color:var(--text-dim);font-size:0.5rem;">Open</span></div><div class="sc-cell"><span class="label">WOD</span><br><span style="color:var(--text-dim);font-size:0.5rem;">Open</span></div><div class="sc-cell"><span class="label">WOD</span><br><span style="color:var(--text-dim);font-size:0.5rem;">Open</span></div><div class="sc-cell"><span class="label">WOD</span><br><span style="color:var(--text-dim);font-size:0.5rem;">Open</span></div>
+      <div class="sc-cell"><span class="label">WOD</span><br><span style="color:var(--text-dim);font-size:0.45rem;">Open</span></div><div class="sc-cell"><span class="label">WOD</span><br><span style="color:var(--text-dim);font-size:0.45rem;">Open</span></div><div class="sc-cell"><span class="label">WOD</span><br><span style="color:var(--text-dim);font-size:0.45rem;">Open</span></div><div class="sc-cell"><span class="label">WOD</span><br><span style="color:var(--text-dim);font-size:0.45rem;">Open</span></div><div class="sc-cell"><span class="label">WOD</span><br><span style="color:var(--text-dim);font-size:0.45rem;">Open</span></div><div class="sc-empty"></div>
 
       <div class="sc-time">20:15</div>
-      <div class="sc-cell"><span class="label">WOD</span><br><span style="color:var(--text-dim);font-size:0.5rem;">Open</span></div><div class="sc-cell"><span class="label">WOD</span><br><span style="color:var(--text-dim);font-size:0.5rem;">Open</span></div><div class="sc-cell"><span class="label">WOD</span><br><span style="color:var(--text-dim);font-size:0.5rem;">Open</span></div><div class="sc-empty"></div>
+      <div class="sc-cell"><span class="label">WOD</span><br><span style="color:var(--text-dim);font-size:0.45rem;">Open</span></div><div class="sc-cell"><span class="label">WOD</span><br><span style="color:var(--text-dim);font-size:0.45rem;">Open</span></div><div class="sc-cell"><span class="label">WOD</span><br><span style="color:var(--text-dim);font-size:0.45rem;">Open</span></div><div class="sc-cell"><span class="label">WOD</span><br><span style="color:var(--text-dim);font-size:0.45rem;">Open</span></div><div class="sc-empty"></div><div class="sc-empty"></div>
 
       <div class="sc-time">21:15</div>
-      <div class="sc-cell"><span class="label">WOD</span><br><span style="color:var(--text-dim);font-size:0.5rem;">Open</span></div><div class="sc-cell"><span class="label">WOD</span><br><span style="color:var(--text-dim);font-size:0.5rem;">Open</span></div><div class="sc-cell"><span class="label">WOD</span><br><span style="color:var(--text-dim);font-size:0.5rem;">Open</span></div><div class="sc-empty"></div>
+      <div class="sc-cell"><span class="label">WOD</span><br><span style="color:var(--text-dim);font-size:0.45rem;">Open</span></div><div class="sc-cell"><span class="label">WOD</span><br><span style="color:var(--text-dim);font-size:0.45rem;">Open</span></div><div class="sc-cell"><span class="label">WOD</span><br><span style="color:var(--text-dim);font-size:0.45rem;">Open</span></div><div class="sc-cell"><span class="label">WOD</span><br><span style="color:var(--text-dim);font-size:0.45rem;">Open</span></div><div class="sc-empty"></div><div class="sc-empty"></div>
+    </div>
 
-      <div class="sc-time">22:15</div>
-      <div class="sc-cell"><span class="label">WOD</span><br><span style="color:var(--text-dim);font-size:0.5rem;">Open</span></div><div class="sc-cell"><span class="label">WOD</span><br><span style="color:var(--text-dim);font-size:0.5rem;">Open</span></div><div class="sc-cell"><span class="label">WOD</span><br><span style="color:var(--text-dim);font-size:0.5rem;">Open</span></div><div class="sc-empty"></div>
+    <h3 class="sched-subtitle reveal" style="color:var(--gold);font-family:var(--font-display);font-size:1rem;letter-spacing:2px;text-transform:uppercase;text-align:center;margin-top:32px;margin-bottom:8px;">
+      Verano
+    </h3>
+    <div class="schedule-grid reveal">
+      <div class="sc-time"></div>
+      <div class="sc-header">LUN</div>
+      <div class="sc-header">MAR</div>
+      <div class="sc-header">MIÉ</div>
+      <div class="sc-header">JUE</div>
+      <div class="sc-header">VIE</div>
+      <div class="sc-header">SÁB</div>
+
+      <div class="sc-time">09:30</div>
+      <div class="sc-cell"><span class="label">WOD MAÑANAS</span><br><span style="color:var(--text-dim);font-size:0.45rem;">Open*</span></div><div class="sc-cell"><span class="label">WOD MAÑANAS</span><br><span style="color:var(--text-dim);font-size:0.45rem;">Open*</span></div><div class="sc-cell"><span class="label">WOD MAÑANAS</span><br><span style="color:var(--text-dim);font-size:0.45rem;">Open*</span></div><div class="sc-cell"><span class="label">WOD MAÑANAS</span><br><span style="color:var(--text-dim);font-size:0.45rem;">Open*</span></div><div class="sc-cell"><span class="label">WOD MAÑANAS</span><br><span style="color:var(--text-dim);font-size:0.45rem;">Open*</span></div><div class="sc-empty"></div>
+
+      <div class="sc-time">10:30</div>
+      <div class="sc-cell"><span class="label">WOD MAÑANAS</span><br><span style="color:var(--text-dim);font-size:0.45rem;">Open*</span></div><div class="sc-cell"><span class="label">WOD MAÑANAS</span><br><span style="color:var(--text-dim);font-size:0.45rem;">Open*</span></div><div class="sc-cell"><span class="label">WOD MAÑANAS</span><br><span style="color:var(--text-dim);font-size:0.45rem;">Open*</span></div><div class="sc-cell"><span class="label">WOD MAÑANAS</span><br><span style="color:var(--text-dim);font-size:0.45rem;">Open*</span></div><div class="sc-cell"><span class="label">WOD MAÑANAS</span><br><span style="color:var(--text-dim);font-size:0.45rem;">Open*</span></div><div class="sc-cell"><span class="label">WOD MAÑANAS</span><br><span style="color:var(--text-dim);font-size:0.45rem;">Open*</span></div>
+
+      <div class="sc-time">11:30</div>
+      <div class="sc-cell"><span class="label">WOD MAÑANAS</span><br><span style="color:var(--text-dim);font-size:0.45rem;">FUNCIONAL</span></div><div class="sc-cell"><span class="label">WOD MAÑANAS</span><br><span style="color:var(--text-dim);font-size:0.45rem;">FUNCIONAL</span></div><div class="sc-cell"><span class="label">WOD MAÑANAS</span><br><span style="color:var(--text-dim);font-size:0.45rem;">FUNCIONAL</span></div><div class="sc-cell"><span class="label">WOD MAÑANAS</span><br><span style="color:var(--text-dim);font-size:0.45rem;">FUNCIONAL</span></div><div class="sc-cell"><span class="label">WOD MAÑANAS</span><br><span style="color:var(--text-dim);font-size:0.45rem;">FUNCIONAL</span></div><div class="sc-empty"></div>
+
+      <div class="sc-time">17:15</div>
+      <div class="sc-cell"><span class="label">WOD</span><br><span style="color:var(--text-dim);font-size:0.45rem;">Open</span></div><div class="sc-cell"><span class="label">WOD</span><br><span style="color:var(--text-dim);font-size:0.45rem;">Open</span></div><div class="sc-cell"><span class="label">WOD</span><br><span style="color:var(--text-dim);font-size:0.45rem;">Open</span></div><div class="sc-cell"><span class="label">WOD</span><br><span style="color:var(--text-dim);font-size:0.45rem;">Open</span></div><div class="sc-cell"><span class="label">WOD</span><br><span style="color:var(--text-dim);font-size:0.45rem;">Open</span></div><div class="sc-empty"></div>
+
+      <div class="sc-time">18:15</div>
+      <div class="sc-cell"><span class="label">WOD</span><br><span style="color:var(--text-dim);font-size:0.45rem;">Open</span></div><div class="sc-cell"><span class="label">WOD</span><br><span style="color:var(--text-dim);font-size:0.45rem;">Open</span></div><div class="sc-cell"><span class="label">WOD</span><br><span style="color:var(--text-dim);font-size:0.45rem;">Open</span></div><div class="sc-cell"><span class="label">WOD</span><br><span style="color:var(--text-dim);font-size:0.45rem;">Open</span></div><div class="sc-cell"><span class="label">WOD</span><br><span style="color:var(--text-dim);font-size:0.45rem;">Open</span></div><div class="sc-empty"></div>
     </div>
   </div>
 </section>
