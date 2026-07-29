@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cross Thrones | Cross Training en Illescas</title>
+<meta name="description" content="Cross Training en Illescas. Entrenamiento funcional de alta intensidad. Forja tu fuerza y cardio. WOD, Open, entrenamiento personalizado.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0a0a0a; --bg2: #111; --bg3: #1a1a1a;
+  --red: #d10f0b; --red-dark: #a00c08; --red-glow: rgba(209,15,11,0.35);
+  --green: #3b8c3a; --green-glow: rgba(59,140,58,0.25);
+  --gold: #d4a843; --gold-glow: rgba(212,168,67,0.3);
+  --white: #ffffff; --text: rgba(255,255,255,0.88);
+  --text-muted: rgba(255,255,255,0.55); --text-dim: rgba(255,255,255,0.3);
+  --border: rgba(255,255,255,0.08); --border-light: rgba(209,15,11,0.25);
+  --card-bg: rgba(255,255,255,0.03); --card-hover: rgba(209,15,11,0.05);
+  --font-display: 'Oswald', sans-serif; --font-body: 'Roboto', sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);background:var(--bg);color:var(--text);overflow-x:hidden;line-height:1.6;-webkit-font-smoothing:antialiased}
+body::after{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;opacity:0.025;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:256px 256px}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,10,0.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 24px;height:70px}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.nav-logo-icon{width:38px;height:38px;background:var(--red);border-radius:8px;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:1.1rem;font-weight:700;color:#fff}
+.nav-logo-text{font-family:var(--font-display);font-size:1.2rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--white)}
+.nav-logo-text span{color:var(--gold)}
+.nav-links{display:flex;gap:0;list-style:none;align-items:center}
+.nav-links a{font-family:var(--font-display);font-size:0.78rem;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.65);text-decoration:none;padding:8px 18px;transition:color 0.2s;position:relative}
+.nav-links a::after{content:'';position:absolute;bottom:0;left:18px;right:18px;height:2px;background:var(--gold);transform:scaleX(0);transition:transform 0.3s ease}
+.nav-links a:hover{color:var(--white)}
+.nav-links a:hover::after{transform:scaleX(1)}
+.nav-cta{background:var(--gold);color:var(--bg)!important;border-radius:50px;padding:10px 24px!important;font-weight:600!important;transition:all 0.3s ease!important}
+.nav-cta::after{display:none!important}
+.nav-cta:hover{background:#c49a30!important;transform:translateY(-1px);box-shadow:0 4px 20px var(--gold-glow)}
+.nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:8px}
+.nav-hamburger span{display:block;width:24px;height:2px;background:rgba(255,255,255,0.7);border-radius:2px;transition:all 0.3s}
+.mobile-nav{position:fixed;top:0;right:-100%;width:75vw;max-width:360px;height:100vh;z-index:200;background:var(--bg2);border-left:1px solid var(--border);padding:90px 32px 32px;transition:right 0.4s cubic-bezier(0.16,1,0.3,1);display:flex;flex-direction:column;gap:4px}
+.mobile-nav.open{right:0}
+.mobile-nav a{font-family:var(--font-display);font-size:1.1rem;font-weight:500;color:rgba(255,255,255,0.7);text-decoration:none;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.04);transition:color 0.2s;letter-spacing:1px;text-transform:uppercase}
+.mobile-nav a:hover{color:var(--gold)}
+.mobile-nav .nav-cta-mobile{margin-top:20px;background:var(--gold);color:var(--bg);text-align:center;border-radius:50px;padding:14px;font-weight:600;font-size:1rem;letter-spacing:1px}
+.mobile-overlay{position:fixed;inset:0;z-index:150;background:rgba(0,0,0,0.7);opacity:0;pointer-events:none;transition:opacity 0.4s ease}
+.mobile-overlay.open{opacity:1;pointer-events:auto}
+
+section{position:relative;overflow:hidden}
+.section-label{font-family:var(--font-display);font-size:0.75rem;letter-spacing:4px;color:var(--gold);text-transform:uppercase;margin-bottom:12px;font-weight:500}
+.section-title{font-family:var(--font-display);font-size:clamp(2rem,4.5vw,3.2rem);font-weight:700;line-height:1.08;letter-spacing:-0.5px;margin-bottom:16px;color:var(--white);text-transform:uppercase}
+.section-title .gold{color:var(--gold)}
+.section-title .accent{color:var(--red)}
+.section-desc{font-size:clamp(0.9rem,1.2vw,1.05rem);line-height:1.75;color:var(--text-muted);max-width:640px}
+.section-desc.center{margin:0 auto;text-align:center}
+.inner{max-width:1200px;margin:0 auto;padding:0 24px}
+
+.hero{min-height:100vh;display:flex;align-items:center;position:relative;padding-top:70px}
+.hero-bg{position:absolute;inset:0;z-index:0}
+.hero-bg img{width:100%;height:100%;object-fit:cover;filter:brightness(0.4) saturate(1.15)}
+.hero-overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(10,10,10,0.1)0%,rgba(10,10,10,0.35)40%,rgba(10,10,10,0.7)80%,var(--bg)100%)}
+.hero-grid{position:absolute;inset:0;z-index:1;background-image:linear-gradient(rgba(212,168,67,0.04)1px,transparent 1px),linear-gradient(90deg,rgba(212,168,67,0.04)1px,transparent 1px);background-size:60px 60px}
+.hero-glow{position:absolute;inset:0;z-index:1;pointer-events:none;overflow:hidden}
+.hero-glow::before{content:'';position:absolute;top:-20%;left:-10%;width:120%;height:60%;background:radial-gradient(ellipse at 50% 50%,rgba(212,168,67,0.08)0%,rgba(212,168,67,0.03)30%,transparent 60%);animation:glowPulse 4s ease-in-out infinite}
+.hero-content{position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:120px 24px 80px;width:100%}
+.hero-tag{display:inline-block;font-family:var(--font-display);font-size:0.72rem;letter-spacing:4px;color:var(--gold);border:1px solid rgba(212,168,67,0.25);border-radius:50px;padding:6px 18px;margin-bottom:24px;text-transform:uppercase;animation:fadeUp 0.8s ease 0.2s both}
+.hero-title{font-family:var(--font-display);font-size:clamp(2.8rem,8vw,5.5rem);font-weight:700;line-height:1.02;letter-spacing:-1px;color:var(--white);margin-bottom:4px;text-transform:uppercase;animation:fadeUp 0.8s ease 0.3s both}
+.hero-title .gold{color:var(--gold)}
+.hero-title .hulk-text{display:inline-block;text-shadow:0 0 20px rgba(212,168,67,0.3),0 0 40px rgba(212,168,67,0.15);animation:goldPulse 3s ease-in-out infinite}
+@keyframes goldPulse{0%,100%{text-shadow:0 0 20px rgba(212,168,67,0.3),0 0 40px rgba(212,168,67,0.15)}50%{text-shadow:0 0 30px rgba(212,168,67,0.5),0 0 60px rgba(212,168,67,0.25),0 0 100px rgba(212,168,67,0.1)}}
+@keyframes glowPulse{0%,100%{opacity:0.4;transform:scale(1)}50%{opacity:1;transform:scale(1.05)}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+.hero-sub{font-size:clamp(1.1rem,2vw,1.4rem);color:var(--text-muted);margin-bottom:8px;font-weight:300;letter-spacing:2px;text-transform:uppercase;animation:fadeUp 0.8s ease 0.4s both}
+.hero-quote{font-size:clamp(0.85rem,1.3vw,1rem);font-weight:300;font-style:italic;color:rgba(255,255,255,0.65);margin-bottom:40px;max-width:620px;line-height:1.5;animation:fadeUp 0.8s ease 0.5s both}
+.hero-actions{display:flex;gap:16px;flex-wrap:wrap;animation:fadeUp 0.8s ease 0.6s both}
+
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-display);font-size:0.85rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;text-decoration:none;padding:14px 32px;border-radius:50px;transition:all 0.3s ease;cursor:pointer;border:none}
+.btn-primary{background:var(--gold);color:var(--bg);box-shadow:0 4px 20px var(--gold-glow)}
+.btn-primary:hover{background:#c49a30;transform:translateY(-2px);box-shadow:0 8px 30px var(--gold-glow)}
+.btn-secondary{background:var(--red);color:var(--white);box-shadow:0 4px 20px var(--red-glow)}
+.btn-secondary:hover{background:var(--red-dark);transform:translateY(-2px);box-shadow:0 8px 30px var(--red-glow)}
+.btn-outline{background:transparent;color:var(--white);border:1px solid rgba(255,255,255,0.2)}
+.btn-outline:hover{border-color:var(--gold);color:var(--gold)}
+
+/* ── ABOUT ── */
+.about{background:var(--bg2)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.about-image{border-radius:16px;overflow:hidden;position:relative}
+.about-image img{width:100%;height:500px;object-fit:cover;border-radius:16px}
+.about-text p{color:var(--text-muted);line-height:1.8;margin-bottom:16px}
+
+/* ── CROSSFIT TERMS ── */
+.terms{background:var(--bg)}
+.terms-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:48px}
+.term-card{background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:28px 24px;transition:all 0.3s}
+.term-card:hover{border-color:rgba(212,168,67,0.3);background:rgba(212,168,67,0.02)}
+.term-card .term-icon{font-size:2rem;margin-bottom:12px}
+.term-card h3{font-family:var(--font-display);font-size:1rem;font-weight:600;color:var(--gold);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px}
+.term-card p{font-size:0.88rem;color:var(--text-muted);line-height:1.6}
+
+/* ── PODCAST ── */
+.podcast{background:var(--bg2)}
+.podcast-inner{max-width:760px;margin:0 auto;text-align:center}
+.podcast-audio{background:var(--card-bg);border:1px solid var(--border);border-radius:16px;padding:32px;margin-top:32px}
+.podcast-audio h3{font-family:var(--font-display);font-size:1.2rem;color:var(--white);margin-bottom:8px;text-transform:uppercase}
+.podcast-audio p{font-size:0.9rem;color:var(--text-muted);margin-bottom:20px}
+.podcast-audio audio{width:100%;border-radius:8px}
+
+/* ── SCHEDULE ── */
+.schedule{background:var(--bg2)}
+.schedule-grid{display:grid;grid-template-columns:55px repeat(4,1fr);gap:3px;max-width:700px;margin:40px auto 0;background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:6px}
+.sc-header{font-family:var(--font-display);font-size:0.65rem;font-weight:600;color:rgba(255,255,255,0.5);text-align:center;padding:8px 2px;letter-spacing:1px;text-transform:uppercase}
+.sc-time{font-family:var(--font-display);font-size:0.6rem;font-weight:500;color:var(--gold);text-align:center;padding:4px 2px;display:flex;align-items:center;justify-content:center;flex-direction:column;line-height:1.1}
+.sc-time small{font-size:0.5rem;color:var(--text-dim)}
+.sc-cell{padding:4px 2px;text-align:center;border-radius:4px;font-family:var(--font-display);font-size:0.55rem;font-weight:600;background:rgba(212,168,67,0.04);border:1px solid rgba(212,168,67,0.1);display:flex;align-items:center;justify-content:center;transition:all 0.2s}
+.sc-cell:hover{background:rgba(212,168,67,0.08);border-color:rgba(212,168,67,0.2)}
+.sc-cell .label{color:var(--gold)}
+.sc-empty{padding:2px;border-radius:4px;background:transparent;border:1px solid transparent}
+
+/* ── PRICING ── */
+.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:900px;margin:48px auto 0}
+.price-card{background:var(--card-bg);border:1px solid var(--border);border-radius:16px;padding:36px 24px;text-align:center;transition:all 0.3s;position:relative}
+.price-card:hover{border-color:rgba(212,168,67,0.3);transform:translateY(-2px)}
+.price-featured{border-color:var(--gold);background:rgba(212,168,67,0.04)}
+.price-featured::before{content:'RECOMENDADO';position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--gold);color:var(--bg);font-size:0.6rem;font-weight:700;letter-spacing:2px;padding:4px 16px;border-radius:50px}
+.price-name{font-family:var(--font-display);font-size:1rem;font-weight:600;color:var(--white);letter-spacing:1px;text-transform:uppercase;margin-bottom:4px}
+.price-detail{font-size:0.8rem;color:var(--text-dim);margin-bottom:16px}
+.price-amount{font-family:var(--font-display);font-size:2.8rem;font-weight:700;color:var(--gold);line-height:1}
+.price-period{font-size:0.85rem;color:var(--text-muted);margin-bottom:16px}
+.price-features{list-style:none;margin-bottom:20px}
+.price-features li{font-size:0.82rem;color:var(--text-muted);padding:6px 0;border-bottom:1px solid rgba(255,255,255,0.04)}
+.price-features li:last-child{border-bottom:none}
+.price-features li::before{content:'✓ ';color:var(--gold)}
+
+/* ── CTA ── */
+.cta-banner{background:var(--bg2);text-align:center;padding:80px 0}
+.cta-banner h2{font-family:var(--font-display);font-size:clamp(1.8rem,3.5vw,2.8rem);color:var(--white);margin-bottom:12px}
+.cta-banner p{color:var(--text-muted);max-width:500px;margin:0 auto 32px;font-size:1.05rem}
+
+/* ── CONTACT ── */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
+.contact-info-item{display:flex;gap:16px;align-items:flex-start;margin-bottom:24px}
+.contact-info-icon{width:44px;height:44px;background:rgba(212,168,67,0.1);border:1px solid rgba(212,168,67,0.2);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0}
+.contact-info-item h4{font-size:0.85rem;font-weight:600;color:var(--white);margin-bottom:4px}
+.contact-info-item p{font-size:0.9rem;color:var(--text-muted)}
+.contact-info-item a{color:var(--gold);text-decoration:none}
+.contact-form{background:var(--card-bg);border:1px solid var(--border);border-radius:16px;padding:36px}
+.form-group{margin-bottom:16px}
+.form-group label{display:block;font-size:0.8rem;font-weight:500;color:var(--text-muted);margin-bottom:6px}
+.form-group input,.form-group textarea,.form-group select{width:100%;padding:12px 16px;background:var(--bg);border:1px solid var(--border);border-radius:8px;color:var(--white);font-family:var(--font-body);font-size:0.9rem;transition:border 0.2s}
+.form-group input:focus,.form-group textarea:focus,.form-group select:focus{outline:none;border-color:var(--gold)}
+.form-group textarea{height:100px;resize:vertical}
+.btn-submit{width:100%;padding:14px;background:var(--gold);color:var(--bg);border:none;border-radius:50px;font-family:var(--font-body);font-size:0.9rem;font-weight:600;letter-spacing:1px;cursor:pointer;transition:all 0.3s}
+.btn-submit:hover{background:#c49a30;transform:translateY(-1px)}
+
+/* ── FOOTER ── */
+footer{background:var(--bg2);border-top:1px solid var(--border);padding:40px 0}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px}
+.footer-brand p{font-size:0.85rem;color:var(--text-muted);line-height:1.6;max-width:360px;margin-top:12px}
+.footer-col h4{font-size:0.8rem;font-weight:600;color:var(--white);letter-spacing:2px;text-transform:uppercase;margin-bottom:16px}
+.footer-col a{display:block;font-size:0.85rem;color:var(--text-muted);text-decoration:none;padding:4px 0;transition:color 0.2s}
+.footer-col a:hover{color:var(--gold)}
+.footer-bottom{margin-top:32px;padding-top:24px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.footer-bottom p{font-size:0.8rem;color:var(--text-dim)}
+.footer-social{display:flex;gap:12px}
+.footer-social a{width:36px;height:36px;border:1px solid var(--border);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--text-muted);transition:all 0.2s}
+.footer-social a:hover{border-color:var(--gold);color:var(--gold)}
+
+.whatsapp-float{position:fixed;bottom:24px;right:24px;z-index:50;width:56px;height:56px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,0.35);transition:all 0.3s;cursor:pointer;text-decoration:none}
+.whatsapp-float:hover{transform:scale(1.1);box-shadow:0 6px 30px rgba(37,211,102,0.5)}
+.whatsapp-float svg{width:26px;height:26px;fill:#fff}
+
+@media(max-width:768px){
+  .nav-links,.nav-cta{display:none}.nav-hamburger{display:flex}
+  .about-grid,.contact-grid{grid-template-columns:1fr;gap:32px}
+  .about-image img{height:300px}
+  .terms-grid,.pricing-grid{grid-template-columns:1fr}
+  .schedule-grid{grid-template-columns:40px repeat(4,1fr);gap:2px;padding:4px}
+  .footer-grid{grid-template-columns:1fr;gap:32px}
+  .footer-bottom{flex-direction:column;text-align:center}
+  section{padding:60px 0}
+  .hero-content{padding:100px 24px 60px}
+}
+
+.reveal{opacity:0;transform:translateY(30px);transition:all 0.6s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <div class="nav-logo-icon">CT</div>
+      <span class="nav-logo-text">CROSS <span>THRONES</span></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#about">El Box</a></li>
+      <li><a href="#terminos">CrossFit</a></li>
+      <li><a href="#horario">Horario</a></li>
+      <li><a href="#tarifas">Tarifas</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+      <li><a href="https://crossthrones.wodbuster.com/user/default.aspx" class="nav-cta">Zona Socios</a></li>
+    </ul>
+    <button class="nav-hamburger" id="hamburger" aria-label="Menú"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="mobile-overlay" id="mobileOverlay"></div>
+<div class="mobile-nav" id="mobileNav">
+  <a href="#about" class="mobile-link">El Box</a>
+  <a href="#terminos" class="mobile-link">CrossFit</a>
+  <a href="#horario" class="mobile-link">Horario</a>
+  <a href="#tarifas" class="mobile-link">Tarifas</a>
+  <a href="#contacto" class="mobile-link">Contacto</a>
+  <a href="https://crossthrones.wodbuster.com/user/default.aspx" class="nav-cta-mobile">Zona Socios</a>
+</div>
+
+<section class="hero">
+  <div class="hero-bg">
+    <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1920&q=80" alt="Cross Training">
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-content">
+    <div class="hero-tag">Cross Training en Illescas</div>
+    <h1 class="hero-title"><span class="hulk-text">CROSS</span> <span class="gold">THRONES</span></h1>
+    <p class="hero-sub">Forja tu fuerza & cardio</p>
+    <p class="hero-quote">"No es lo que tú tienes, sino cómo usas lo que tienes lo que marca la diferencia"</p>
+    <div class="hero-actions">
+      <a href="https://crossthrones.wodbuster.com/contratar.aspx?q=1&c=%7b%22Item1%22%3a1%2c%22Item2%22%3a1%7d" class="btn btn-primary">Apúntate ahora</a>
+      <a href="tel:+34639159269" class="btn btn-outline">📞 639 15 92 69</a>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="inner">
+    <div class="about-grid">
+      <div class="about-image reveal">
+        <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=800&q=80" alt="Cross Thrones Box">
+      </div>
+      <div class="about-text reveal">
+        <div class="section-label">Cross Thrones</div>
+        <h2 class="section-title">El <span class="gold">Box</span></h2>
+        <p><strong>Cross Training</strong> se define como un sistema de entrenamiento de fuerza y acondicionamiento basado en ejercicios funcionales constantemente variados realizados a una alta intensidad.</p>
+        <p>Es fácil escribirlo o explicarlo pero difícil entenderlo hasta que lo vivas. Ven a probarlo, ¡que no te lo cuenten!</p>
+        <p>Las clases las hacemos todos juntos y se adaptan a tu nivel con plazas limitadas y un coach siempre pendiente de ti.</p>
+        <a href="https://crossthrones.wodbuster.com/contratar.aspx?q=1&c=%7b%22Item1%22%3a1%2c%22Item2%22%3a1%7d" class="btn btn-primary" style="margin-top:12px;">Apúntate ahora</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CROSSFIT TERMS -->
+<section class="terms" id="terminos">
+  <div class="inner">
+    <div class="reveal" style="text-align:center;">
+      <div class="section-label">Glosario</div>
+      <h2 class="section-title">Términos del <span class="gold">CrossFit</span></h2>
+      <p class="section-desc center">Conoce el vocabulario básico para que tu primera clase sea pan comido</p>
+    </div>
+    <div class="terms-grid reveal">
+      <div class="term-card">
+        <div class="term-icon">💪</div>
+        <h3>WOD</h3>
+        <p>Workout of the Day. El entrenamiento del día. Cada sesión es diferente: combinación de ejercicios funcionales a alta intensidad. Nunca dos WOD iguales.</p>
+      </div>
+      <div class="term-card">
+        <div class="term-icon">🏋️</div>
+        <h3>OPEN BOX</h3>
+        <p>Espacio de entrenamiento libre donde puedes trabajar por tu cuenta. Ideal para practicar técnicas, mejorar tu condición física o hacer tu propio WOD.</p>
+      </div>
+      <div class="term-card">
+        <div class="term-icon">⏱️</div>
+        <h3>AMRAP</h3>
+        <p>As Many Rounds As Possible. Completa tantas rondas como puedas en un tiempo determinado. A más rondas, mejor resultado.</p>
+      </div>
+      <div class="term-card">
+        <div class="term-icon">📋</div>
+        <h3>EMOM</h3>
+        <p>Every Minute On the Minute. Empiezas un ejercicio al inicio de cada minuto, el tiempo restante descansas. Intensidad controlada al segundo.</p>
+      </div>
+      <div class="term-card">
+        <div class="term-icon">⚡</div>
+        <h3>FOR TIME</h3>
+        <p>Completa una serie de ejercicios en el menor tiempo posible. Tu objetivo: batir tu propio récord. Cada segundo cuenta.</p>
+      </div>
+      <div class="term-card">
+        <div class="term-icon">🎯</div>
+        <h3>RX / SCALED</h3>
+        <p>RX es el WOD tal cual lo diseñaron (pesos y movimientos completos). Scaled es la versión adaptada para principiantes. Cada uno a su nivel.</p>
+      </div>
+      <div class="term-card">
+        <div class="term-icon">🏛️</div>
+        <h3>THE BOX</h3>
+        <p>Así llamamos al gimnasio de CrossFit. Nada de espejos ni máquinas de musculación. Espacio abierto, funcional y con comunidad.</p>
+      </div>
+      <div class="term-card">
+        <div class="term-icon">🔥</div>
+        <h3>BURPEES</h3>
+        <p>El ejercicio más odiado y más efectivo. Tírate al suelo, salta, repite. Trabaja todo el cuerpo en un solo movimiento. Duele, pero funciona.</p>
+      </div>
+      <div class="term-card">
+        <div class="term-icon">🎵</div>
+        <h3>THE CROSSFIT OPEN</h3>
+        <p>Competición mundial de CrossFit. Cinco semanas, un WOD por semana. Participas desde tu Box contra atletas de todo el mundo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PODCAST -->
+<section class="podcast" id="podcast">
+  <div class="inner">
+    <div class="reveal podcast-inner">
+      <div class="section-label">Podcast</div>
+      <h2 class="section-title">Historia del <span class="gold">CrossFit</span></h2>
+      <p class="section-desc center">Descubre cómo nació el movimiento que cambió la forma de entrenar en todo el mundo. De un pequeño garage en California a fenómeno global.</p>
+    </div>
+    <div class="podcast-audio reveal">
+      <h3>🎧 La Historia del CrossFit</h3>
+      <p>Greg Glassman, el primer WOD, los Juegos, y cómo CrossFit revolucionó el fitness para siempre.</p>
+      <audio controls>
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+      </audio>
+    </div>
+  </div>
+</section>
+
+<!-- SCHEDULE -->
+<section class="schedule" id="horario">
+  <div class="inner">
+    <div class="reveal" style="text-align:center;">
+      <div class="section-label">Horarios</div>
+      <h2 class="section-title">WOD & <span class="gold">OPEN BOX</span></h2>
+      <p class="section-desc center">Clases dirigidas WOD y espacio OPEN BOX. Lunes a Viernes.</p>
+    </div>
+    <div class="schedule-grid reveal">
+      <div class="sc-time"></div>
+      <div class="sc-header">LUNES</div>
+      <div class="sc-header">MARTES</div>
+      <div class="sc-header">JUEVES</div>
+      <div class="sc-header">VIERNES</div>
+
+      <div class="sc-time">09:30</div>
+      <div class="sc-cell"><span class="label">WOD</span></div><div class="sc-cell"><span class="label">WOD</span></div><div class="sc-cell"><span class="label">WOD</span></div><div class="sc-cell"><span class="label">WOD</span></div>
+
+      <div class="sc-time">10:30</div>
+      <div class="sc-cell"><span class="label">OPEN</span></div><div class="sc-cell"><span class="label">OPEN</span></div><div class="sc-cell"><span class="label">OPEN</span></div><div class="sc-cell"><span class="label">OPEN</span></div>
+
+      <div class="sc-time">11:30</div>
+      <div class="sc-cell"><span class="label">WOD</span></div><div class="sc-empty"></div><div class="sc-empty"></div><div class="sc-empty"></div>
+
+      <div class="sc-time">16:15</div>
+      <div class="sc-cell"><span class="label">WOD</span></div><div class="sc-cell"><span class="label">WOD</span></div><div class="sc-cell"><span class="label">WOD</span></div><div class="sc-cell"><span class="label">WOD</span></div>
+
+      <div class="sc-time">17:15</div>
+      <div class="sc-empty"></div><div class="sc-cell"><span class="label">OPEN</span></div><div class="sc-cell"><span class="label">OPEN</span></div><div class="sc-empty"></div>
+
+      <div class="sc-time">18:15</div>
+      <div class="sc-cell"><span class="label">WOD</span></div><div class="sc-cell"><span class="label">WOD</span></div><div class="sc-cell"><span class="label">WOD</span></div><div class="sc-cell"><span class="label">WOD</span></div>
+
+      <div class="sc-time">19:15</div>
+      <div class="sc-cell"><span class="label">WOD</span></div><div class="sc-cell"><span class="label">WOD</span></div><div class="sc-cell"><span class="label">WOD</span></div><div class="sc-cell"><span class="label">WOD</span></div>
+
+      <div class="sc-time">20:15</div>
+      <div class="sc-cell"><span class="label">WOD</span></div><div class="sc-cell"><span class="label">WOD</span></div><div class="sc-cell"><span class="label">WOD</span></div><div class="sc-cell"><span class="label">WOD</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing" id="tarifas">
+  <div class="inner">
+    <div class="reveal" style="text-align:center;">
+      <div class="section-label">Tarifas</div>
+      <h2 class="section-title">Planes <span class="gold">a tu medida</span></h2>
+      <p class="section-desc center">Elige el plan que mejor se adapte a tu ritmo de entrenamiento</p>
+    </div>
+    <div class="pricing-grid reveal">
+      <div class="price-card">
+        <div class="price-name">7 WOD</div>
+        <div class="price-detail">2 clases / semana</div>
+        <div class="price-amount">35€</div>
+        <div class="price-period">al mes</div>
+        <ul class="price-features">
+          <li>WOD, Open, Funcional</li>
+          <li>Acceso a WOD Mañanas</li>
+          <li>Coach siempre presente</li>
+        </ul>
+        <a href="https://crossthrones.wodbuster.com/contratar.aspx?q=1&c=%7b%22Item1%22%3a1%2c%22Item2%22%3a1%7d" class="btn btn-secondary" style="width:100%;">Apúntate</a>
+      </div>
+      <div class="price-card price-featured">
+        <div class="price-name">12 WOD</div>
+        <div class="price-detail">3 clases / semana</div>
+        <div class="price-amount">50€</div>
+        <div class="price-period">al mes</div>
+        <ul class="price-features">
+          <li>WOD, Open, Funcional</li>
+          <li>Acceso a WOD Mañanas</li>
+          <li>Coach siempre presente</li>
+          <li>Mejor relación calidad-precio</li>
+        </ul>
+        <a href="https://crossthrones.wodbuster.com/contratar.aspx?q=1&c=%7b%22Item1%22%3a5%2c%22Item2%22%3a1%7d" class="btn btn-primary" style="width:100%;">Apúntate</a>
+      </div>
+      <div class="price-card">
+        <div class="price-name">ILIMITADO</div>
+        <div class="price-detail">Sin límite de clases</div>
+        <div class="price-amount">70€</div>
+        <div class="price-period">al mes</div>
+        <ul class="price-features">
+          <li>WOD, Open, Funcional</li>
+          <li>Acceso a WOD Mañanas</li>
+          <li>Open* incluido</li>
+          <li>Sin límite de clases</li>
+        </ul>
+        <a href="https://crossthrones.wodbuster.com/contratar.aspx?q=1&c=%7b%22Item1%22%3a7%2c%22Item2%22%3a1%7d" class="btn btn-secondary" style="width:100%;">Apúntate</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-banner">
+  <div class="inner">
+    <div class="reveal">
+      <h2>¿Listo para entrenar?</h2>
+      <p>Ven a conocernos sin compromiso. Tu primera clase te espera.</p>
+      <a href="https://crossthrones.wodbuster.com/contratar.aspx?q=1&c=%7b%22Item1%22%3a1%2c%22Item2%22%3a1%7d" class="btn btn-primary">Apúntate ahora</a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contacto">
+  <div class="inner">
+    <div class="contact-grid">
+      <div class="reveal">
+        <div class="section-label">Contacto</div>
+        <h2 class="section-title">Visita el <span class="gold">Box</span></h2>
+        <div class="contact-info-item">
+          <div class="contact-info-icon">📍</div>
+          <div><h4>Dirección</h4><p>C. Artesanos, 2, 45200 Illescas, Toledo</p></div>
+        </div>
+        <div class="contact-info-item">
+          <div class="contact-info-icon">📞</div>
+          <div><h4>Teléfono</h4><p><a href="tel:+34639159269">639 15 92 69</a></p></div>
+        </div>
+        <div class="contact-info-item">
+          <div class="contact-info-icon" style="background:#25D366;border-color:#25D366;color:#fff;">💬</div>
+          <div><h4>WhatsApp</h4><p><a href="https://wa.me/34639159269">Envíanos un mensaje</a></p></div>
+        </div>
+        <div class="contact-info-item">
+          <div class="contact-info-icon">📷</div>
+          <div><h4>Instagram</h4><p><a href="https://www.instagram.com/crossofthrones" target="_blank">@crossofthrones</a></p></div>
+        </div>
+      </div>
+      <div class="reveal">
+        <div class="contact-form">
+          <h3 style="font-family:var(--font-display);font-size:1.3rem;color:var(--white);margin-bottom:20px;text-transform:uppercase;">Solicita información</h3>
+          <form action="https://formsubmit.co/sofiabohoyo@gmail.com" method="POST">
+            <input type="hidden" name="_subject" value="Nuevo lead Cross Thrones - Web Premium Demo">
+            <input type="hidden" name="_captcha" value="false">
+            <div class="form-group"><label>Nombre *</label><input type="text" name="Nombre" required></div>
+            <div class="form-group"><label>Teléfono *</label><input type="tel" name="Telefono" required></div>
+            <div class="form-group"><label>Email</label><input type="email" name="Email"></div>
+            <div class="form-group"><label>Mensaje</label><textarea name="Mensaje" placeholder="Cuéntanos qué te gustaría saber..."></textarea></div>
+            <button type="submit" class="btn-submit">Enviar solicitud</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="nav-logo-text">CROSS <span>THRONES</span></span>
+        <p>Cross Training en Illescas. Forja tu fuerza y cardio con entrenamiento funcional de alta intensidad. WOD, Open y entrenamiento personalizado.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Secciones</h4>
+        <a href="#about">El Box</a>
+        <a href="#terminos">CrossFit</a>
+        <a href="#horario">Horario</a>
+        <a href="#tarifas">Tarifas</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contacto</h4>
+        <a href="tel:+34639159269">639 15 92 69</a>
+        <a href="https://wa.me/34639159269">WhatsApp</a>
+        <a href="https://www.instagram.com/crossofthrones" target="_blank">Instagram</a>
+        <a href="https://maps.google.com/?q=Calle+Artesanos+2+Illescas" target="_blank">Cómo llegar</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Cross Thrones. Todos los derechos reservados.</p>
+      <div class="footer-social">
+        <a href="https://www.instagram.com/crossofthrones" target="_blank" aria-label="Instagram">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/34639159269" class="whatsapp-float" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+const hamburger = document.getElementById('hamburger');
+const mobileNav = document.getElementById('mobileNav');
+const mobileOverlay = document.getElementById('mobileOverlay');
+function toggleMenu(){mobileNav.classList.toggle('open');mobileOverlay.classList.toggle('open')}
+hamburger.addEventListener('click',toggleMenu);
+mobileOverlay.addEventListener('click',toggleMenu);
+document.querySelectorAll('.mobile-link').forEach(l=>l.addEventListener('click',toggleMenu));
+const observer=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:0.15,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+</script>
+</body>
+</html>
