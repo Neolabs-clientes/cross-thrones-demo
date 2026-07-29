@@ -121,19 +121,23 @@ section{position:relative;overflow:hidden}
 .sc-empty{padding:2px;border-radius:4px;background:transparent;border:1px solid transparent}
 
 /* ── PRICING ── */
-.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:900px;margin:48px auto 0}
-.price-card{background:var(--card-bg);border:1px solid var(--border);border-radius:16px;padding:36px 24px;text-align:center;transition:all 0.3s;position:relative}
+.pricing-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;max-width:1100px;margin:48px auto 0}
+.price-card{background:var(--card-bg);border:1px solid var(--border);border-radius:16px;padding:28px 20px;text-align:center;transition:all 0.3s;position:relative}
 .price-card:hover{border-color:rgba(212,168,67,0.3);transform:translateY(-2px)}
 .price-featured{border-color:var(--gold);background:rgba(212,168,67,0.04)}
 .price-featured::before{content:'RECOMENDADO';position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--gold);color:var(--bg);font-size:0.6rem;font-weight:700;letter-spacing:2px;padding:4px 16px;border-radius:50px}
-.price-name{font-family:var(--font-display);font-size:1rem;font-weight:600;color:var(--white);letter-spacing:1px;text-transform:uppercase;margin-bottom:4px}
-.price-detail{font-size:0.8rem;color:var(--text-dim);margin-bottom:16px}
-.price-amount{font-family:var(--font-display);font-size:2.8rem;font-weight:700;color:var(--gold);line-height:1}
-.price-period{font-size:0.85rem;color:var(--text-muted);margin-bottom:16px}
+.price-name{font-family:var(--font-display);font-size:0.9rem;font-weight:600;color:var(--white);letter-spacing:0.5px;text-transform:uppercase;margin-bottom:4px}
+.price-amount{font-family:var(--font-display);font-size:2.2rem;font-weight:700;color:var(--gold);line-height:1}
+.price-period{font-size:0.8rem;color:var(--text-muted);margin-bottom:16px}
 .price-features{list-style:none;margin-bottom:20px}
 .price-features li{font-size:0.82rem;color:var(--text-muted);padding:6px 0;border-bottom:1px solid rgba(255,255,255,0.04)}
 .price-features li:last-child{border-bottom:none}
 .price-features li::before{content:'✓ ';color:var(--gold)}
+.bonos-grid{display:flex;gap:16px;justify-content:center;max-width:500px;margin:20px auto 0}
+.bono-card{background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:24px;text-align:center;flex:1;transition:all 0.3s}
+.bono-card:hover{border-color:rgba(212,168,67,0.3)}
+.bono-label{font-family:var(--font-display);font-size:0.85rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px}
+.bono-price{font-family:var(--font-display);font-size:1.8rem;font-weight:700;color:var(--gold);margin-bottom:12px}
 
 /* ── CTA ── */
 .cta-banner{background:var(--bg2);text-align:center;padding:80px 0}
@@ -178,6 +182,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:40px 0}
   .about-grid,.contact-grid{grid-template-columns:1fr;gap:32px}
   .about-image img{height:300px}
   .terms-grid,.pricing-grid{grid-template-columns:1fr}
+  .bonos-grid{flex-direction:column;max-width:280px}
   .schedule-grid{grid-template-columns:40px repeat(4,1fr);gap:2px;padding:4px}
   .footer-grid{grid-template-columns:1fr;gap:32px}
   .footer-bottom{flex-direction:column;text-align:center}
@@ -349,28 +354,34 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:40px 0}
       <div class="sc-header">VIERNES</div>
 
       <div class="sc-time">09:30</div>
-      <div class="sc-cell"><span class="label">WOD</span></div><div class="sc-cell"><span class="label">WOD</span></div><div class="sc-cell"><span class="label">WOD</span></div><div class="sc-cell"><span class="label">WOD</span></div>
+      <div class="sc-cell"><span class="label">WOD MAÑANAS</span><br><span style="color:var(--text-dim);font-size:0.5rem;">Open*</span></div><div class="sc-cell"><span class="label">WOD MAÑANAS</span><br><span style="color:var(--text-dim);font-size:0.5rem;">Open*</span></div><div class="sc-cell"><span class="label">WOD MAÑANAS</span><br><span style="color:var(--text-dim);font-size:0.5rem;">Open*</span></div><div class="sc-cell"><span class="label">WOD MAÑANAS</span><br><span style="color:var(--text-dim);font-size:0.5rem;">Open*</span></div>
 
       <div class="sc-time">10:30</div>
-      <div class="sc-cell"><span class="label">OPEN</span></div><div class="sc-cell"><span class="label">OPEN</span></div><div class="sc-cell"><span class="label">OPEN</span></div><div class="sc-cell"><span class="label">OPEN</span></div>
+      <div class="sc-cell"><span class="label">WOD MAÑANAS</span><br><span style="color:var(--text-dim);font-size:0.5rem;">Open*</span></div><div class="sc-cell"><span class="label">WOD MAÑANAS</span><br><span style="color:var(--text-dim);font-size:0.5rem;">Open*</span></div><div class="sc-cell"><span class="label">WOD MAÑANAS</span><br><span style="color:var(--text-dim);font-size:0.5rem;">Open*</span></div><div class="sc-cell"><span class="label">WOD MAÑANAS</span><br><span style="color:var(--text-dim);font-size:0.5rem;">Open*</span></div>
 
       <div class="sc-time">11:30</div>
-      <div class="sc-cell"><span class="label">WOD</span></div><div class="sc-empty"></div><div class="sc-empty"></div><div class="sc-empty"></div>
+      <div class="sc-cell"><span class="label">WOD MAÑANAS</span><br><span style="color:var(--text-dim);font-size:0.5rem;">FUNCIONAL</span></div><div class="sc-cell"><span class="label">WOD MAÑANAS</span><br><span style="color:var(--text-dim);font-size:0.5rem;">FUNCIONAL</span></div><div class="sc-cell"><span class="label">WOD MAÑANAS</span><br><span style="color:var(--text-dim);font-size:0.5rem;">FUNCIONAL</span></div><div class="sc-cell"><span class="label">WOD MAÑANAS</span><br><span style="color:var(--text-dim);font-size:0.5rem;">FUNCIONAL</span></div>
 
       <div class="sc-time">16:15</div>
-      <div class="sc-cell"><span class="label">WOD</span></div><div class="sc-cell"><span class="label">WOD</span></div><div class="sc-cell"><span class="label">WOD</span></div><div class="sc-cell"><span class="label">WOD</span></div>
+      <div class="sc-cell"><span class="label">WOD</span><br><span style="color:var(--text-dim);font-size:0.5rem;">Open</span></div><div class="sc-empty"></div><div class="sc-cell"><span class="label">WOD</span><br><span style="color:var(--text-dim);font-size:0.5rem;">Open</span></div><div class="sc-empty"></div>
 
       <div class="sc-time">17:15</div>
-      <div class="sc-empty"></div><div class="sc-cell"><span class="label">OPEN</span></div><div class="sc-cell"><span class="label">OPEN</span></div><div class="sc-empty"></div>
+      <div class="sc-cell"><span class="label">WOD</span><br><span style="color:var(--text-dim);font-size:0.5rem;">Open</span></div><div class="sc-cell"><span class="label">WOD</span><br><span style="color:var(--text-dim);font-size:0.5rem;">Open</span></div><div class="sc-cell"><span class="label">WOD</span><br><span style="color:var(--text-dim);font-size:0.5rem;">Open</span></div><div class="sc-cell"><span class="label">WOD</span><br><span style="color:var(--text-dim);font-size:0.5rem;">Open</span></div>
 
       <div class="sc-time">18:15</div>
-      <div class="sc-cell"><span class="label">WOD</span></div><div class="sc-cell"><span class="label">WOD</span></div><div class="sc-cell"><span class="label">WOD</span></div><div class="sc-cell"><span class="label">WOD</span></div>
+      <div class="sc-cell"><span class="label">WOD</span><br><span style="color:var(--text-dim);font-size:0.5rem;">Open</span></div><div class="sc-cell"><span class="label">WOD</span><br><span style="color:var(--text-dim);font-size:0.5rem;">Open</span></div><div class="sc-cell"><span class="label">WOD</span><br><span style="color:var(--text-dim);font-size:0.5rem;">Open</span></div><div class="sc-cell"><span class="label">WOD</span><br><span style="color:var(--text-dim);font-size:0.5rem;">Open</span></div>
 
       <div class="sc-time">19:15</div>
-      <div class="sc-cell"><span class="label">WOD</span></div><div class="sc-cell"><span class="label">WOD</span></div><div class="sc-cell"><span class="label">WOD</span></div><div class="sc-cell"><span class="label">WOD</span></div>
+      <div class="sc-cell"><span class="label">WOD</span><br><span style="color:var(--text-dim);font-size:0.5rem;">Open</span></div><div class="sc-cell"><span class="label">WOD</span><br><span style="color:var(--text-dim);font-size:0.5rem;">Open</span></div><div class="sc-cell"><span class="label">WOD</span><br><span style="color:var(--text-dim);font-size:0.5rem;">Open</span></div><div class="sc-cell"><span class="label">WOD</span><br><span style="color:var(--text-dim);font-size:0.5rem;">Open</span></div>
 
       <div class="sc-time">20:15</div>
-      <div class="sc-cell"><span class="label">WOD</span></div><div class="sc-cell"><span class="label">WOD</span></div><div class="sc-cell"><span class="label">WOD</span></div><div class="sc-cell"><span class="label">WOD</span></div>
+      <div class="sc-cell"><span class="label">WOD</span><br><span style="color:var(--text-dim);font-size:0.5rem;">Open</span></div><div class="sc-cell"><span class="label">WOD</span><br><span style="color:var(--text-dim);font-size:0.5rem;">Open</span></div><div class="sc-cell"><span class="label">WOD</span><br><span style="color:var(--text-dim);font-size:0.5rem;">Open</span></div><div class="sc-empty"></div>
+
+      <div class="sc-time">21:15</div>
+      <div class="sc-cell"><span class="label">WOD</span><br><span style="color:var(--text-dim);font-size:0.5rem;">Open</span></div><div class="sc-cell"><span class="label">WOD</span><br><span style="color:var(--text-dim);font-size:0.5rem;">Open</span></div><div class="sc-cell"><span class="label">WOD</span><br><span style="color:var(--text-dim);font-size:0.5rem;">Open</span></div><div class="sc-empty"></div>
+
+      <div class="sc-time">22:15</div>
+      <div class="sc-cell"><span class="label">WOD</span><br><span style="color:var(--text-dim);font-size:0.5rem;">Open</span></div><div class="sc-cell"><span class="label">WOD</span><br><span style="color:var(--text-dim);font-size:0.5rem;">Open</span></div><div class="sc-cell"><span class="label">WOD</span><br><span style="color:var(--text-dim);font-size:0.5rem;">Open</span></div><div class="sc-empty"></div>
     </div>
   </div>
 </section>
@@ -385,42 +396,96 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:40px 0}
     </div>
     <div class="pricing-grid reveal">
       <div class="price-card">
-        <div class="price-name">7 WOD</div>
-        <div class="price-detail">2 clases / semana</div>
+        <div class="price-name">7 WOD / mes</div>
         <div class="price-amount">35€</div>
         <div class="price-period">al mes</div>
         <ul class="price-features">
-          <li>WOD, Open, Funcional</li>
-          <li>Acceso a WOD Mañanas</li>
-          <li>Coach siempre presente</li>
+          <li>WOD, Open, WOD Mañanas, Open*, Funcional</li>
+          <li>7 clases / mes</li>
         </ul>
         <a href="https://crossthrones.wodbuster.com/contratar.aspx?q=1&c=%7b%22Item1%22%3a1%2c%22Item2%22%3a1%7d" class="btn btn-secondary" style="width:100%;">Apúntate</a>
       </div>
+      <div class="price-card">
+        <div class="price-name">9 WOD / mes</div>
+        <div class="price-amount">45€</div>
+        <div class="price-period">al mes</div>
+        <ul class="price-features">
+          <li>WOD, Open, WOD Mañanas, Open*, Funcional</li>
+          <li>9 clases / mes</li>
+        </ul>
+        <a href="https://crossthrones.wodbuster.com/contratar.aspx?q=1&c=%7b%22Item1%22%3a2%2c%22Item2%22%3a1%7d" class="btn btn-secondary" style="width:100%;">Apúntate</a>
+      </div>
       <div class="price-card price-featured">
-        <div class="price-name">12 WOD</div>
-        <div class="price-detail">3 clases / semana</div>
+        <div class="price-name">12 WOD / mes</div>
         <div class="price-amount">50€</div>
         <div class="price-period">al mes</div>
         <ul class="price-features">
-          <li>WOD, Open, Funcional</li>
-          <li>Acceso a WOD Mañanas</li>
-          <li>Coach siempre presente</li>
-          <li>Mejor relación calidad-precio</li>
+          <li>WOD, Open, WOD Mañanas, Open*, Funcional</li>
+          <li>12 clases / mes</li>
         </ul>
         <a href="https://crossthrones.wodbuster.com/contratar.aspx?q=1&c=%7b%22Item1%22%3a5%2c%22Item2%22%3a1%7d" class="btn btn-primary" style="width:100%;">Apúntate</a>
       </div>
       <div class="price-card">
+        <div class="price-name">12 WOD + 4 Open</div>
+        <div class="price-amount">55€</div>
+        <div class="price-period">al mes</div>
+        <ul class="price-features">
+          <li>WOD, WOD Mañanas, Funcional: 12/mes</li>
+          <li>Open, Open*: 4/mes</li>
+        </ul>
+        <a href="https://crossthrones.wodbuster.com/contratar.aspx?q=1&c=%7b%22Item1%22%3a3%2c%22Item2%22%3a1%7d" class="btn btn-secondary" style="width:100%;">Apúntate</a>
+      </div>
+      <div class="price-card">
+        <div class="price-name">16 WOD + 4 Open</div>
+        <div class="price-amount">65€</div>
+        <div class="price-period">al mes</div>
+        <ul class="price-features">
+          <li>WOD, WOD Mañanas, Funcional: 16/mes</li>
+          <li>Open, Open*: 4/mes</li>
+        </ul>
+        <a href="https://crossthrones.wodbuster.com/contratar.aspx?q=1&c=%7b%22Item1%22%3a4%2c%22Item2%22%3a1%7d" class="btn btn-secondary" style="width:100%;">Apúntate</a>
+      </div>
+      <div class="price-card">
+        <div class="price-name">16 WOD / mes</div>
+        <div class="price-amount">60€</div>
+        <div class="price-period">al mes</div>
+        <ul class="price-features">
+          <li>WOD, Open, WOD Mañanas, Open*, Funcional</li>
+          <li>16 clases / mes</li>
+        </ul>
+        <a href="https://crossthrones.wodbuster.com/contratar.aspx?q=1&c=%7b%22Item1%22%3a6%2c%22Item2%22%3a1%7d" class="btn btn-secondary" style="width:100%;">Apúntate</a>
+      </div>
+      <div class="price-card">
         <div class="price-name">ILIMITADO</div>
-        <div class="price-detail">Sin límite de clases</div>
         <div class="price-amount">70€</div>
         <div class="price-period">al mes</div>
         <ul class="price-features">
-          <li>WOD, Open, Funcional</li>
-          <li>Acceso a WOD Mañanas</li>
-          <li>Open* incluido</li>
+          <li>WOD, Open, WOD Mañanas, Open*, Funcional</li>
           <li>Sin límite de clases</li>
         </ul>
         <a href="https://crossthrones.wodbuster.com/contratar.aspx?q=1&c=%7b%22Item1%22%3a7%2c%22Item2%22%3a1%7d" class="btn btn-secondary" style="width:100%;">Apúntate</a>
+      </div>
+      <div class="price-card">
+        <div class="price-name">MAÑANAS</div>
+        <div class="price-amount">60€</div>
+        <div class="price-period">al mes</div>
+        <ul class="price-features">
+          <li>WOD Mañanas, Open*, Funcional</li>
+          <li>Ilimitado en horario mañanas</li>
+        </ul>
+        <a href="https://crossthrones.wodbuster.com/contratar.aspx?q=1&c=%7b%22Item1%22%3a8%2c%22Item2%22%3a1%7d" class="btn btn-secondary" style="width:100%;">Apúntate</a>
+      </div>
+    </div>
+    <div class="bonos-grid reveal">
+      <div class="bono-card">
+        <div class="bono-label">Clase Suelta</div>
+        <div class="bono-price">10€</div>
+        <a href="https://crossthrones.wodbuster.com/contratar.aspx?q=2&c=1" class="btn btn-outline" style="width:100%;">Apúntate</a>
+      </div>
+      <div class="bono-card">
+        <div class="bono-label">Bono 10 sesiones</div>
+        <div class="bono-price">75€</div>
+        <a href="https://crossthrones.wodbuster.com/contratar.aspx?q=2&c=2" class="btn btn-outline" style="width:100%;">Apúntate</a>
       </div>
     </div>
   </div>
